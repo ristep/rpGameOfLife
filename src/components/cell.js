@@ -13,21 +13,19 @@ const Img = styled.img`
 `;
 
 const Cell = (props) => {
-	const { cord, ...rest } = props;
-	const [isLive, setIsLive] = useState(cord.live);
+	const cells  = useSelector( (state) => (state.world.cells));
+	const { row, col } = props.cord;
   const dispatch = useDispatch();
-	
+
 	const onClickHandle = () => {
-		setIsLive(!isLive);
-		var newCord = cord;
-		newCord.live = isLive;
-    dispatch(setCell(newCord));
+		 const newCord = {row:row,col:col,live:!cells[row][col]}
+		 dispatch(setCell(newCord));
 	};
 
 	return (
 		<>
-			{/* {row}:{col} */}
-			<Img onClick={onClickHandle} src={isLive?cell:cellWhite} alt="cell"></Img> 
+			{/* {cells[10][10]} */}
+			<Img onClick={onClickHandle} src={  cells[row][col] ? cell : cellWhite } alt="cell"></Img> 
 		</>	
 	);
 } 

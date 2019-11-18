@@ -5,7 +5,7 @@ const initialState = () => {
 	for(var r = 0; r < 20; r++) {
 		world[r] = new Array();
 		for (var c = 0; c < 20; c++){
-			world[r][c] = false;
+			world[r][c] = (r==c);
 		 }
 	 }
 

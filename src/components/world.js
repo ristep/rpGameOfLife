@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import ReactJson from 'react-json-view';
-import {useSelector} from 'react-redux';
+//import ReactJson from 'react-json-view';
+import { useDispatch, useSelector } from "react-redux";
+
 import Cell from './cell';
 
 const World = () => {
-	const { conf, cells } = useSelector(state => state.world);
+	const { conf } = useSelector(state => state.world);
+  const dispatch = useDispatch();
 
 	var newWorld = [];
 	var kk = 0;
-	for(var i = 0; i < conf.rows; i++) {
-		for (var j = 0; j < conf.cols; j++){
-			newWorld.push(<Cell key={(kk++).toString()} cord={{row:i, col:j, live:cells[i][j]}} ></Cell>);
+	for(var r = 0; r < conf.rows; r++) {
+		for (var c = 0; c < conf.cols; c++){
+			newWorld.push(<Cell key={(kk++).toString()} cord={{row:r, col:c}} ></Cell>);
 		 }
 		 newWorld.push(<br key={(kk++).toString()} />);
 	 }
@@ -18,7 +20,7 @@ const World = () => {
 	return (
 		<>
 			{newWorld}
-			<ReactJson src={cells} />
+			{/* <ReactJson src={cells} /> */}
 		</>
 	);
 } 
