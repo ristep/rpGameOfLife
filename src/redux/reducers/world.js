@@ -1,7 +1,5 @@
 import { ADD_CELL, TOGGLE_CELL, KILL_CELL, RESURRECT_CELL, SET_CELL, INVERT_WORLD, NEXT_WORLD } from "../actionTypes";
-
-export const WORLD_WIDTH = 50;
-export const WORLD_HEIGHT = 40;
+import { WORLD_HEIGHT, WORLD_WIDTH } from "setings";
 
 const initialState = () => {
 	var world = new Array();
@@ -94,8 +92,8 @@ export default function (state = initialState(), action) {
 				}
 			}
 
-			for ( r = 0; r <= rows; r++) {
-				for ( c = 0; c <= cols; c++) {
+			for ( r = 1; r <= rows; r++) {
+				for ( c = 1; c <= cols; c++) {
 					newCells[r][c] = cells[r][c] ? 0 : 1;
 				}
 			}
