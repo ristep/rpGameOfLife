@@ -8,18 +8,18 @@ const World = () => {
 	const { conf } = useSelector(state => state.world);
   const dispatch = useDispatch();
 
-	var newWorld = [];
+	var rendWorld = [];
 	var kk = 0;
-	for(var r = 0; r < conf.rows; r++) {
-		for (var c = 0; c < conf.cols; c++){
-			newWorld.push(<Cell key={(kk++).toString()} cord={{row:r, col:c}} ></Cell>);
+	for(var r = 1; r <= conf.rows; r++) {
+		for (var c = 1; c <= conf.cols; c++){
+			rendWorld.push(<Cell key={(kk++).toString()} cord={{row:r, col:c}} ></Cell>);
 		 }
-		 newWorld.push(<br key={(kk++).toString()} />);
+		 rendWorld.push(<br key={(kk++).toString()} />);
 	 }
 
 	return (
 		<>
-			{newWorld}
+			{rendWorld}
 			{/* <ReactJson src={cells} /> */}
 		</>
 	);

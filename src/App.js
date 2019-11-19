@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './components/logoComp';
 import World from './components/world';
+import Seting from './components/seting';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <header className="App-header">
 			<World></World>
 			<br />
+			<Seting></Seting>
 			<Logo></Logo> 
         <p>
           Edit <code>src/App.js</code> and save to reload.

@@ -9,7 +9,9 @@ const Img = styled.img`
   position: relative;
   top: 0px;
 	left: 0px;	
-	height: 20px;
+	height: 14px;
+	padding: 0;
+	margin: 0;
 `;
 
 const Cell = (props) => {
@@ -23,10 +25,7 @@ const Cell = (props) => {
 	};
 
 	return (
-		<>
-			{/* {cells[10][10]} */}
-			<Img onClick={onClickHandle} src={  cells[row][col] ? cell : cellWhite } alt="cell"></Img> 
-		</>	
+		<Img onClick={onClickHandle} src={  cells[row][col]===1 ? cell : cellWhite } alt="cell"></Img> 
 	);
 } 
 
