@@ -1,18 +1,19 @@
 import React from 'react';
-import Logo from './components/logoComp';
 import World from './components/world';
-import Seting from './seting';
+import Seting from 'components/seting';
+import { useDispatch, useSelector } from "react-redux";
+import { openSettingsDialog } from 'redux/actions';
 import './App.css';
 
 function App() {
+	const dispatch = useDispatch();
   return (
     <div className="App">
       <header className="App-header">
-			<World></World>
-			<br /><br /><br /><br /><br />
-			<Logo></Logo> 
 			<br />
+			<World></World> 
 			<Seting></Seting>
+			<button onClick={() => dispatch(openSettingsDialog())}>Setings</button>
       </header>
     </div>
   );
