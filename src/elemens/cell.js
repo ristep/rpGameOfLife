@@ -3,17 +3,16 @@ import cell from "redApple.png";
 import cellWhite from "whiteApple.png";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCell } from 'redux/actions';
+import { getWorldCells, getWorldConf } from 'redux/reducers/world';
 
 const Cell = (props) => {
-	const cells  = useSelector( (state) => (state.world.cells));
-	const { cellSize } = useSelector( (state) => (state.world.conf) );
 	const dispatch = useDispatch();
-	
-	const { row, col } = props.cord;
-  const live = cells[row][col];
-	
-	const xpos = col*(cellSize+2)+"px";
-	const ypos = row*(cellSize+2)+"px"
+	const { cellSize } = useSelector(getWorldConf);
+	const cells = useSelector((getWorldCells));
+	const live = cells[props.cord.row][props.cord.col];
+
+	const xpos = props.cord.col*(cellSize+2)+"px";
+	const ypos = props.cord.row*(cellSize+2)+"px"
 
 	const liveStyle = {
 		position: "absolute",
@@ -32,14 +31,10 @@ const Cell = (props) => {
 		height:cellSize+1
 	};
 	
-	// () => {
-	// 	return({top:row*CELL_SIZE+"px",left:col*CELL_SIZE+"px",width:CELL_SIZE})
-	// }
-
 	const onClickHandle = () => {
-		 const newCord = {row:row,col:col}
-		 dispatch(toggleCell(newCord));
+		 dispatch(toggleCell(props.cord));
 	};
+
 	if(live)
 		return (<img onClick={onClickHandle} style={liveStyle} src={cell} alt=""></img> );
 	else

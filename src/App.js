@@ -1,7 +1,7 @@
 import React from 'react';
 import World from './components/world';
 import Seting from 'components/seting';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { openSettingsDialog } from 'redux/actions';
 import './App.css';
 
