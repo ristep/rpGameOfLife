@@ -10,24 +10,24 @@ import AboutDialog from 'components/about';
 import { getDelay } from 'redux/selectors';
 
 function App() {
-	const delay =  useSelector(getDelay);
+	const delay = useSelector(getDelay);
 	const dispatch = useDispatch();
-	
+
 	useInterval(() => {
-		dispatch({type:NEXT_WORLD});
+		dispatch({ type: NEXT_WORLD });
 	}, delay);
 
-  return (
-    <div className="App">
-      <header className="App-header">
+	return (
+		<div className="App">
+			<header className="App-header">
 				<AppNavBar></AppNavBar>
-			<br />
-      </header>
-			<World></World> 
+				<br />
+			</header>
+			<World></World>
 			<Seting></Seting>
 			<AboutDialog />
-    </div>
-  );
+		</div>
+	);
 }
 
 export default App;
