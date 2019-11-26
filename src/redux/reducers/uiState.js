@@ -1,23 +1,30 @@
 import {
 	OPEN_SETTINGS_DIALOG,
-	CLOSE_SETTINGS_DIALOG
+	CLOSE_SETTINGS_DIALOG,
+	CLOSE_ABOUT_DIALOG,
+	OPEN_ABOUT_DIALOG
 } from 'redux/actionTypes';
 
 const initialState = {
-	settingsDialog: false,
-	clearWorldAlert: false,
-	aboutDialog: false,
-}
+	settingsDialogState: false,
+	clearWorldAlertState: false,
+	aboutDialogState: false,
 
-export const getSettingsDialog = (state) => ( state.uiState.settingsDialog );
+}
 
 export default function (state = initialState, action) {
 	switch (action.type) {
 		case OPEN_SETTINGS_DIALOG:{
-			return { ...state, settingsDialog:true };
+			return { ...state, settingsDialogState:true };
 		}	
 		case CLOSE_SETTINGS_DIALOG:{
-			return { ...state, settingsDialog:false };
+			return { ...state, settingsDialogState:false };
+		}	
+		case OPEN_ABOUT_DIALOG:{
+			return { ...state, aboutDialogState:true };
+		}	
+		case CLOSE_ABOUT_DIALOG:{
+			return { ...state, aboutDialogState:false };
 		}	
 		default:
 			return state;

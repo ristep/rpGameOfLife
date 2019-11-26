@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 //import ReactJson from 'react-json-view';
 import { useSelector } from "react-redux";
 import { getButtonColors } from 'redux/reducers/theme';
-import { id } from 'postcss-selector-parser';
 
 const ButtonS = styled.button`
   border: none;
@@ -18,7 +17,7 @@ const ButtonS = styled.button`
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
-	border-radius:15px;
+	border-radius:4px;
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24),0 2px 5px 0 rgba(0,0,0,0.19);
 	:hover{ 
 		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.24),0 7px 15px 0 rgba(0,0,0,0.19);
@@ -41,7 +40,6 @@ const Button = (props) => {
 
 	if(props.disabled){
 		 stl = { ...stl, backgroundColor:'#fff', color:'#c0c0c0', boxShadow: " 0 0 0 0" }; 
-		 console.log(stl);
 	}
 
 	return(	

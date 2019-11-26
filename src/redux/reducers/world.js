@@ -6,7 +6,11 @@ import {
 	NEXT_WORLD, 
 	SET_CELL_SIZE, 
 	RESIZE_WORLD, 
-	RESURRECT_CELL
+	RESURRECT_CELL,
+	SET_INTERVAL,
+	START_WORLD,
+	STOP_WORLD,
+	SET_CELL_TIPE
 } from "../actionTypes";
 
 import { 
@@ -14,10 +18,6 @@ import {
 	WORLD_WIDTH, 
 	CELL_SIZE 
 } from "initSetings";
-
-// Some Selectors
-export const getWorldConf = state => state.world.conf;
-export const getWorldCells = state => state.world.cells;
 
 const initialState = () => {
 	var world = [];
@@ -30,7 +30,14 @@ const initialState = () => {
 	return ({
 		generation: 0,
 		liveCells: 0,
-		conf: { rows: WORLD_HEIGHT, colls: WORLD_WIDTH, cellSize: CELL_SIZE },
+		interval: 50,
+		delay: null,
+		conf: { 
+			rows: WORLD_HEIGHT, 
+			colls: WORLD_WIDTH, 
+			cellSize: CELL_SIZE,
+			cellTipe: 'image', // square
+		 },
 		cells: world //new Array(20).fill(new Array(20).fill(false)),
 	});
 }
@@ -38,6 +45,18 @@ const initialState = () => {
 export default function (state = initialState(), action) {
 	var r = 0, c = 0;
 	switch (action.type) {
+		case SET_CELL_TIPE:{
+			return { ...state, conf:{ ...state.conf, cellTipe: action.payload } };	
+		}
+		case START_WORLD:{
+			return { ...state, delay: state.interval };	
+		}
+		case STOP_WORLD:{
+			return { ...state, delay: null };	
+		}
+		case SET_INTERVAL:{
+			return { ...state, interval: action.payload, delay:action.payload };	
+		}
 		case SET_CELL: {
 			const cells = [...state.cells];
 			const { row, col } = action.payload;
@@ -105,7 +124,7 @@ export default function (state = initialState(), action) {
 		}
 		case INVERT_WORLD: {
 			const cells = [...state.cells];
-			var living = 0;
+			living = 0;
 			const newCells = [];
 			cells.forEach((row,rkey ) => {
 				newCells[rkey] = [];
@@ -131,7 +150,7 @@ export default function (state = initialState(), action) {
 					newCells[r][c] = state.cells[r][c];
 				}
 			}
-			return { conf: { ...action.payload, cellSize }, liveCells: 0, cells: newCells };
+			return { ...state, conf: { ...action.payload, cellSize }, liveCells: 0, cells: newCells };
 		}
 		case SET_CELL_SIZE: {
 			const newConf = { ...state.conf };

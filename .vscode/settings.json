@@ -1,5 +1,6 @@
 {
 	"cSpell.words": [
+		"cell",
 		"cellsize",
 		"cnext",
 		"colls",
@@ -7,9 +8,12 @@
 		"init",
 		"oldcols",
 		"oldrows",
+		"rkey",
 		"rnext",
 		"rprev",
 		"seting",
-		"setings"
+		"setings",
+		"slive",
+		"tipe"
 	]
 }

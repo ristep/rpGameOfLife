@@ -10,11 +10,11 @@ const BottomBannerStyled = styled.div`
 	border-top-right-radius: 0px;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
-	line-height:50px;
+	line-height:40px;
 	text-align: center;
 	text-shadow: 20px;
 	width:100%;
-  height:50px;
+  height:42px;
   background-color:#94A74D;
   position:absolute;
 	bottom:0px;
