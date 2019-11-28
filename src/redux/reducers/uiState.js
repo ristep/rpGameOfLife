@@ -3,7 +3,9 @@ import {
 	OPEN_SETTINGS_DIALOG,
 	CLOSE_SETTINGS_DIALOG,
 	CLOSE_ABOUT_DIALOG,
-	OPEN_ABOUT_DIALOG
+	OPEN_ABOUT_DIALOG,
+	OPEN_CLEAR_ALERT,
+	CLOSE_CLEAR_ALERT
 } from 'redux/actionTypes';
 
 const initialState = {
@@ -29,6 +31,14 @@ export default (state = initialState, action) =>
 			}
 			case CLOSE_ABOUT_DIALOG: {
 				draft.aboutDialogState = false;
+				break;
+			}
+			case OPEN_CLEAR_ALERT: {
+				draft.clearWorldAlertState = true;
+				break;
+			}
+			case CLOSE_CLEAR_ALERT: {
+				draft.clearWorldAlertState = false;
 				break;
 			}
 			default:

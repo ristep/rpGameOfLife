@@ -158,9 +158,6 @@ export default (state = initialState(), action) =>
 				break;
 			}
 			case SET_CELL_SIZE: {
-				// const newConf = { ...state.conf };
-				// newConf.cellSize = action.payload;
-				// return { ...state, conf: newConf }
 				draft.conf.cellSize = action.payload;
 				break;
 			}
