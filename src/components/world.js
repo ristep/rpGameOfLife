@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 //import ReactJson from 'react-json-view';
 import { useSelector } from "react-redux";
 import Cell from '../elemens/cell';
@@ -8,12 +8,6 @@ import { getWorldConf } from 'redux/selectors';
 const World = () => {
 	const { rows, colls } = useSelector(getWorldConf);
 	
-	// useEffect(
-	// 	useInterval(() => {
-	// 		dispatch(nextWorld())
-	// 	}, delay)
-	// , [])
-
 	var rendWorld = [];
 	var kk = 0;
 	for (var r = 0; r < rows; r++) {
@@ -31,4 +25,4 @@ const World = () => {
 	);
 }
 
-export default World;
+export default memo(World);

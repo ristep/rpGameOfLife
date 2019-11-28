@@ -1,9 +1,8 @@
 import React from 'react';
-
 //import ReactJson from 'react-json-view';
 import { useDispatch, useSelector } from "react-redux";
 import { invertWorld, nextWorld, setCellSize, closeSettingsDialog, resizeWorld, stopWorld, startWorld, setInter, setCellTipe } from '../redux/actions';
-import { getSettingsDialog } from 'redux/reducers/uiState';
+// import { getSettingsDialog } from 'redux/reducers/uiState';
 import TopBanner from 'elemens/topBanner';
 import BottomBanner from 'elemens/bottomBanner';
 import BodyBanner from 'elemens/bodyBanner';
@@ -18,7 +17,7 @@ const Seting = () => {
 	const delay = useSelector(getDelay);
 
 	return (
-		<PopupModal show={settingsDialog}>
+		<PopupModal showModal={settingsDialog}>
 			<TopBanner>
 				Game of life!
 					</TopBanner>
@@ -31,7 +30,8 @@ const Seting = () => {
 					:
 					<Button onClick={() => dispatch(startWorld())} >'Start'</Button>
 				}
-				<Button disabled>Speed:</Button>
+				<Button disabled>Interval: {delay}</Button>
+				<br />
 				<Button onClick={() => dispatch(setInter(50))}>50</Button>
 				<Button onClick={() => dispatch({ type: SET_INTERVAL, payload: 100 })} >100</Button>
 				<Button onClick={() => dispatch(setInter(200))} >200</Button>

@@ -16,7 +16,7 @@ const AboutDialog = () => {
 	const winSize = useWinSize();
 
 	return (
-		<PopupModal show={aboutDialogState}>
+		<PopupModal showModal={aboutDialogState}>
 			<TopBanner>
 				About Game of life!
 					</TopBanner>
