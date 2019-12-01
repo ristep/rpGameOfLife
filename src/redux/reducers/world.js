@@ -20,7 +20,7 @@ import {
 	CELL_SIZE
 } from "initSetings";
 
-const initialState = () => {
+export const initialState = () => {
 	var world = [];
 	for (var r = 0; r < WORLD_HEIGHT; r++) {
 		world[r] = [];

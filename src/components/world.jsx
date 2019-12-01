@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 //import ReactJson from 'react-json-view';
 import { useSelector } from "react-redux";
 import Cell from '../elemens/cell';
-import Logo from '../elemens/logoComp';
+import Logo from '../elemens/logo';
 import { getWorldConf } from 'redux/selectors';
 
 const World = () => {

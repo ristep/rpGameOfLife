@@ -1,6 +1,6 @@
 import React from 'react';
 import World from './components/world';
-import Seting from 'components/seting';
+import Seting from 'components/setings';
 import { useSelector, useDispatch } from "react-redux";
 import './App.css';
 import AppNavBar from 'components/appNavbar';

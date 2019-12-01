@@ -14,7 +14,9 @@ import {
 	SET_INTERVAL,
 	SET_CELL_TIPE,
 	CLOSE_ABOUT_DIALOG,
-	OPEN_ABOUT_DIALOG
+	OPEN_ABOUT_DIALOG,
+	OPEN_CLEAR_ALERT,
+	CLOSE_CLEAR_ALERT
 } from "./actionTypes";
 
 // World mechanics actions 
@@ -38,3 +40,6 @@ export const closeSettingsDialog = () => ({type: CLOSE_SETTINGS_DIALOG});
 
 export const openAboutDialog = () => ({type: OPEN_ABOUT_DIALOG});
 export const closeAboutDialog = () => ({type: CLOSE_ABOUT_DIALOG});
+
+export const openClearAlert = () => ({type: OPEN_CLEAR_ALERT});
+export const closeClearAlert = () => ({type: CLOSE_CLEAR_ALERT});

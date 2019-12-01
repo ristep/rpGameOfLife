@@ -19,7 +19,7 @@ const AboutDialog = () => {
 		<PopupModal showModal={aboutDialogState}>
 			<TopBanner>
 				About Game of life!
-					</TopBanner>
+			</TopBanner>
 			<BodyBanner>
 				<br />
 				<p>Sir={winSize.width} Visina={winSize.height}</p>

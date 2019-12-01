@@ -1,5 +1,5 @@
 import * as actions from './actions';
-import { TOGGLE_CELL, KILL_CELL, RESURRECT_CELL, SET_CELL, INVERT_WORLD, NEXT_WORLD, RESIZE_WORLD, SET_INTERVAL, START_WORLD, STOP_WORLD, SET_CELL_SIZE, SET_CELL_TIPE, OPEN_SETTINGS_DIALOG, CLOSE_SETTINGS_DIALOG, OPEN_ABOUT_DIALOG, CLOSE_ABOUT_DIALOG } from './actionTypes';
+import { TOGGLE_CELL, KILL_CELL, RESURRECT_CELL, SET_CELL, INVERT_WORLD, NEXT_WORLD, RESIZE_WORLD, SET_INTERVAL, START_WORLD, STOP_WORLD, SET_CELL_SIZE, SET_CELL_TIPE, OPEN_SETTINGS_DIALOG, CLOSE_SETTINGS_DIALOG, OPEN_ABOUT_DIALOG, CLOSE_ABOUT_DIALOG, OPEN_CLEAR_ALERT, CLOSE_CLEAR_ALERT } from './actionTypes';
 
 // some pointless action creator tests :D
 describe('actions', () => {
@@ -67,5 +67,14 @@ describe('actions', () => {
 	it('should create an action to resurrectCell state', () => {
     const expectedAction = { type: CLOSE_ABOUT_DIALOG };
     expect(actions.closeAboutDialog()).toEqual(expectedAction);
+	})
+	it('should create an action to openClearAlert state', () => {
+    const expectedAction = { type: OPEN_CLEAR_ALERT };
+    expect(actions.openClearAlert()).toEqual(expectedAction);
   })
+	it('should create an action to resurrectCell state', () => {
+    const expectedAction = { type: CLOSE_CLEAR_ALERT };
+    expect(actions.closeClearAlert()).toEqual(expectedAction);
+  })
+
 })

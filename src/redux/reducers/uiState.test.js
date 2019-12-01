@@ -38,7 +38,7 @@ describe('uiState reducer', () => {
 	});
 	it('should handle CLOSE_ABOUT_DIALOG', () => {
 		expect(
-			reducer({ ...initialState,aboutDialogState: true	}, {
+			reducer({ ...initialState, aboutDialogState: true	}, {
 				type: types.CLOSE_ABOUT_DIALOG,
 			})
 		).toEqual( initialState	);
@@ -51,8 +51,8 @@ describe('uiState reducer', () => {
 	});
 	it('should handle CLOSE_CLEAR_ALERT', () => {
 		expect(
-			reducer({ ...initialState, clearWorldAlertState: true }, { type: types.CLOSE_CLEAR_ALERT } )
-		).toEqual({...initialState, clearWorldAlertState: false })
+			reducer({ clearWorldAlertState: true }, { type: types.CLOSE_CLEAR_ALERT } )
+		).toEqual({ clearWorldAlertState: false })
 	})
 
 })
