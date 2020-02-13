@@ -9,7 +9,7 @@ import Button from 'elemens/button';
 import PopupModal from 'elemens/popupModal';
 import { getAboutDialogState } from 'redux/selectors';
 import useWinSize from 'hooks/winSize';
-import { setState } from 'expect/build/jestMatchersObject';
+// import { setState } from 'expect/build/jestMatchersObject';
 
 const SamsungRemote = require('samsung-remote');
 

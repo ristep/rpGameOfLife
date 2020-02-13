@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import {
   TOGGLE_CELL,
   KILL_CELL,
