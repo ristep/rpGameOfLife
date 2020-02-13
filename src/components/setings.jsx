@@ -16,7 +16,7 @@ const Seting = () => {
 	const settingsDialog = useSelector(getSettingsDialogState);
 	const delay = useSelector(getDelay);
 
-	return (
+	return ( 
 		<PopupModal showModal={settingsDialog}>
 			<TopBanner>
 				Game of life!

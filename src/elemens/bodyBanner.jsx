@@ -8,7 +8,6 @@ import { getColors } from 'redux/reducers/theme';
 const Body = styled.div`
 	height: fit-content;
 	display: contents;
-	height:100%;
 `;
 
 const BodyBanner = (props) => {
