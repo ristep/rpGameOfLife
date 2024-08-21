@@ -1,5 +1,7 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ristep/rpGameOfLife) 
 
+# Project is Reactjs test for [Conway Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
