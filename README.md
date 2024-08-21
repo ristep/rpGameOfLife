@@ -2,7 +2,7 @@
 
 # Project is Reactjs test for [Conway Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) 
 
-Project is jus an experiment for making Game of Life with reactjs and redux state managment.
+The project is just an experiment for making Game of Life with reactjs and redux state management.
 
 
 
