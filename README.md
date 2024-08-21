@@ -2,6 +2,10 @@
 
 # Project is Reactjs test for [Conway Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) 
 
+Project is jus an experiment for making Game of Life with reactjs and redux state managment.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
